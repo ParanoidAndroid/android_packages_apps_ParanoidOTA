@@ -21,4 +21,7 @@
     <color name="host_action_bar_background">#ffdddddd</color>
     <color name="notifications_text_color">#ffffffff</color>
     <color name="notification_count_background">#ffdd4b39</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="lv_bg">#111</color>
 </resources>

@@ -116,7 +116,9 @@ public class MainActivity extends Activity implements DownloadCallback, Notifica
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_PROGRESS);
+        Utils.onActivityCreateSetTheme(this);
+        
+        requestWindowFeature(Window.FEATURE_PROGRESS);        
 
         mContext = this;
         mSavedInstanceState = savedInstanceState;
@@ -354,6 +356,22 @@ public class MainActivity extends Activity implements DownloadCallback, Notifica
                 intent = new Intent(this, RequestFileActivity.class);
                 startActivity(intent);
                 return true;
+            case R.id.DEUCES:
+            	finish();
+            	return true;
+            case R.id.Holo:
+            	Utils.changeToTheme(this, Utils.Holo);
+            	Toast.makeText(this, R.string.holo_theme_set, Toast.LENGTH_LONG).show();
+            	return true;            	
+            case R.id.Holo_Light:
+            	Utils.changeToTheme(this, Utils.Holo_Light);
+            	Toast.makeText(this, R.string.holo_light_theme_set, Toast.LENGTH_LONG).show();        	
+            	return true;  				                      
+            
+            case R.id.Holo_Light_DAB:
+            	Utils.changeToTheme(this, Utils.Holo_Light_DAB);
+            	Toast.makeText(this, R.string.holo_light_dab_theme_set, Toast.LENGTH_LONG).show();
+            	return true;              	
             default:
                 return super.onOptionsItemSelected(item);
         }

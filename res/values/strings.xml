@@ -195,4 +195,14 @@
     <string name="remove_file_summary">Do you want to remove the file from the list?</string>
     <string name="install">Install</string>
     <string name="install_add_file">Add</string>
+    <string name="pa_version">Version: 3.99 RC2</string>
+    <string name="exit">Exit</string>
+    <string name="menu_theme">Theme</string>
+    <string name="menu_theme_holo">Holo</string>
+    <string name="menu_theme_holo_light">Holo Light (Default)</string>
+    <string name="menu_theme_holo_light_darkactionbar">Holo Light DarkActionBar</string> 
+    <string name="holo_theme_set">Holo theme set!</string>
+    <string name="holo_light_dab_theme_set">Holo Light DarkActionBar set!</string>
+    <string name="holo_light_theme_set">Holo Light Theme set!</string>       
+    
 </resources>

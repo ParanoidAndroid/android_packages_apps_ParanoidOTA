@@ -20,6 +20,7 @@
 package com.paranoid.paranoidota.activities;
 
 import com.paranoid.paranoidota.R;
+import com.paranoid.paranoidota.Utils;
 import com.paranoid.paranoidota.updater.GappsUpdater;
 import com.paranoid.paranoidota.updater.RomUpdater;
 import com.paranoid.paranoidota.updater.Updater.PackageInfo;
@@ -48,6 +49,7 @@ public class SystemActivity extends Activity implements UpdaterListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Utils.onActivityCreateSetTheme(this);
 
         setContentView(R.layout.activity_system);
 
