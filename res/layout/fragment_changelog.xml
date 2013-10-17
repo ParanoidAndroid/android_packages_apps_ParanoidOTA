@@ -18,15 +18,27 @@
   along with Paranoid OTA.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent" >
 
-    <WebView
-        android:id="@+id/changelog"
+    <ListView
+        android:id="@+id/changelogLV"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:padding="32dp" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/changelogVersion"
+        android:layout_centerHorizontal="true" >
 
-</LinearLayout>
+    </ListView>
+
+    <TextView
+        android:id="@+id/changelogVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="@string/pa_version" />
+
+</RelativeLayout>
