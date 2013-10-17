@@ -60,6 +60,7 @@ public class SettingsActivity extends PreferenceActivity implements
     @Override
     @SuppressWarnings("deprecation")
     protected void onCreate(Bundle savedInstanceState) {
+    	Utils.onActivityCreateSetTheme(this);
 
         mSettingsHelper = new SettingsHelper(this);
         mRecoveryHelper = new RecoveryHelper(this);

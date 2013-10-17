@@ -23,6 +23,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import com.paranoid.paranoidota.R;
+import com.paranoid.paranoidota.Utils;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -49,6 +50,7 @@ public class RequestFileActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Utils.onActivityCreateSetTheme(this);
         
         PackageManager packageManager = getPackageManager();
         Intent test = new Intent(Intent.ACTION_GET_CONTENT);

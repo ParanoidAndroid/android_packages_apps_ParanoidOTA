@@ -38,6 +38,7 @@ public class IntroductionActivity extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Utils.onActivityCreateSetTheme(this);
 
         mActivity = this;
 

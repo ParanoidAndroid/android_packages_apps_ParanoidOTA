@@ -53,5 +53,35 @@
         <item name="android:shadowRadius">2.0</item>
         <item name="android:lineSpacingMultiplier">1.1</item>
     </style>
+    
+    <style 
+        name="Holo" parent="@android:style/Theme.Holo">   
+        <item name="android:listViewStyle">@style/LV.Holo</item>   
+    </style>
+    
+    <style name="LV.Holo" parent="android:Widget.Holo.ListView">
+          <item name="android:background">@color/black</item>
+
+  </style>  
+  
+    <style 
+        name="Holo_Light" parent="@android:style/Theme.Holo.Light">   
+        <item name="android:listViewStyle">@style/LV.HoloLight</item>   
+    </style>
+    
+    <style name="LV.HoloLight" parent="android:Widget.Holo.ListView">
+          <item name="android:background">@color/white</item>
+
+  </style>   
+  
+    <style 
+        name="Holo_Light_DAB" parent="@android:style/Theme.Holo.Light.DarkActionBar">   
+        <item name="android:listViewStyle">@style/LV.HoloLight</item>   
+    </style>
+    
+    <style name="LV.HoloLightDAB" parent="android:Widget.Holo.ListView">
+          <item name="android:background">@color/lv_bg</item>
+
+  </style>    
 
 </resources>

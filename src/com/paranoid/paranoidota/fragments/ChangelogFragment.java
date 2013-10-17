@@ -19,56 +19,51 @@
 
 package com.paranoid.paranoidota.fragments;
 
-import android.app.Activity;
-import android.app.Fragment;
 import android.os.Bundle;
+import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.Toast;
+import android.widget.ListView;
 
+import com.paranoid.paranoidota.ListViewAdapter;
 import com.paranoid.paranoidota.R;
 
 public class ChangelogFragment extends Fragment {
+	String[] aboutOptions;
+	
+	ListView changelogLV;
+	
+	ListViewAdapter adapter;
+	
+	int[] flag;
 
-    private static final String CHANGELOG_URL
-            = "https://plus.google.com/app/basic/107979589566958860409/posts";
-
-    @Override
+	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_changelog,
-                container, false);
-        WebView webView = ((WebView) rootView.findViewById(R.id.changelog));
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.setWebViewClient(new WebViewClient() {
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
-                return true;
-            }
+            Bundle savedInstanceState) {
+		
+        View view = inflater.inflate(R.layout.fragment_changelog, container, false);
+        
+        aboutOptions = new String[] { 
+        		"Ninja level +1 (HALO now disappears if only persistent or pinned apps are present and of course if its empty)",  
+        		"Fixed Linked volume settings bug",
+        		"Support us!",
+        		"Fixed notification icons not showing when HALO is active (Tablet UI bug)",
+        		"Other Tablet UI fixes",
+        		"Added incoming call screen transparency",
+        		"Reordered settings menu",
+        		"Fixed Custom kernel force close (Back to stock kernel i.e. No OTG)" +
+        	    "-May release separate flash-able OTG kernel in future",
+        	    "Merged 4.3_r3.1 (JLS36G) (Very minor changes STILL JWR KERNEL) "};
+        
+        changelogLV = (ListView) view.findViewById(R.id.changelogLV);
+        
+        adapter = new ListViewAdapter(getActivity(), aboutOptions, 
+                flag);
+        // Binds the Adapter to the ListView
+        changelogLV.setAdapter(adapter);                             
 
-            public void onPageFinished(WebView view, String url) {
-                // When page is loaded, hide progress bar on activity
-                Activity act = getActivity();
-                if (act == null) {
-                    return;
-                }
-                act.setProgressBarVisibility(false);
-            }
-
-            public void onReceivedError(WebView view, int errorCode, String description,
-                                        String failingUrl) {
-                getActivity().setProgressBarVisibility(false);
-                Toast.makeText(getActivity(), R.string.changelog_error, Toast.LENGTH_SHORT).show();
-            }
-        });
-        if (savedInstanceState == null) {
-            webView.loadUrl(CHANGELOG_URL);
+        return view;
+        
         }
-        return rootView;
-    }
-
-}
+	}

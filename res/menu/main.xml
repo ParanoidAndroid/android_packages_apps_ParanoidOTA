@@ -38,4 +38,36 @@
           android:icon="@drawable/action_settings"
           android:title="@string/action_settings"
           android:showAsAction="ifRoom|withText" />
+    
+    <item 
+        android:id="@+id/DEUCES" 
+        android:showAsAction="always|withText" 
+        android:title="@string/exit">       
+    </item>
+    
+    <group
+         android:id="@+id/groups_themes">
+        
+        <item 
+            android:id="@+id/themes" 
+            android:title="@string/menu_theme">
+            
+            <menu>
+                <item 
+                    android:id="@+id/Holo"
+                     android:title="@string/menu_theme_holo"/>
+                
+                <item
+                     android:id="@+id/Holo_Light" 
+                     android:title="@string/menu_theme_holo_light"/>
+                
+                <item 
+                    android:id="@+id/Holo_Light_DAB" 
+                    android:title="@string/menu_theme_holo_light_darkactionbar"/>			
+                
+            </menu>
+            
+        </item>
+        
+    </group>    
 </menu>

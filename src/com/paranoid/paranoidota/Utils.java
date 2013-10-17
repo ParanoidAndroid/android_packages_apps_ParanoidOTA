@@ -64,6 +64,12 @@ public class Utils {
     public static PackageInfo[] sPackageInfosRom = new PackageInfo[0];
     public static PackageInfo[] sPackageInfosGapps = new PackageInfo[0];
     private static int sWeAreInAospa = -1;
+    
+	private static int mTheme;
+
+	public final static int Holo = 0;	
+	public final static int Holo_Light = 1 ;	
+	public final static int Holo_Light_DAB = 2;    
 
     public static class NotificationInfo implements Serializable {
 
@@ -202,6 +208,34 @@ public class Utils {
             }
         });
     }
+    
+	public static void changeToTheme(Activity activity, int theme) {
+		
+		mTheme = theme;
+		
+		activity.finish();
+		
+		activity.startActivity(new Intent(activity, activity.getClass()));
+		
+	}
+	
+	public static void onActivityCreateSetTheme(Activity activity) {
+		
+		switch (mTheme) {
+		
+		case Holo:
+			activity.setTheme(R.style.Holo);
+			break;			
+		
+		case Holo_Light:
+			activity.setTheme(R.style.Holo_Light);
+			break;		
+			
+		case Holo_Light_DAB:
+			activity.setTheme(R.style.Holo_Light_DAB);
+			break;
+		}
+	}
 
     public static void showNotification(Context context, Updater.PackageInfo[] infosRom,
             Updater.PackageInfo[] infosGapps) {
