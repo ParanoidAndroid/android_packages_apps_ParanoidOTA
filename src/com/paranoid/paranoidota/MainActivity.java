@@ -354,6 +354,9 @@ public class MainActivity extends Activity implements DownloadCallback, Notifica
                 intent = new Intent(this, RequestFileActivity.class);
                 startActivity(intent);
                 return true;
+            case R.id.DEUCES:
+            	finish();
+            	return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
