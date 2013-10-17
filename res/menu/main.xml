@@ -38,4 +38,11 @@
           android:icon="@drawable/action_settings"
           android:title="@string/action_settings"
           android:showAsAction="ifRoom|withText" />
+    
+    <item 
+        android:id="@+id/DEUCES" 
+        android:showAsAction="always|withText" 
+        android:title="@string/exit">
+        
+    </item>
 </menu>
